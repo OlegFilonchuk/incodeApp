@@ -1,28 +1,27 @@
 import React, {Component} from 'react';
-// import from '../../clients.json';
+import Client from './Client';
+import {connect} from 'react-redux';
 
+class ClientsList extends Component {
 
-export  default class ClientsList extends Component {
+    getBody = (data) => (
+        data.map((client) => {
+            return (
+                <li key={client.id}>
+                    <Client client={client}/>
+                </li>
+            )
+        })
+    );
 
-    loadData = () => {
-      /*fetch('../../public/clients')
-          .then(response => {console.log(response.json())});
-      console.log('done');*/
-      const xhr = new XMLHttpRequest();
-      xhr.open('GET', '../../clients', true);
-      xhr.send();
-      xhr.onload = () => {
-        if (xhr.status !== 200) {
-            alert('Error:' + xhr.status + ': ' + xhr.statusText );
-        } else {
-            alert('Success:' + xhr.responseText );
-        }
-      }
-    };
 
     render() {
         return (
-            <div>{this.loadData()}</div>
+            <ul>{this.getBody(this.props.clients)}</ul>
         )
     }
 }
+
+export default connect(({clients}) => ({
+    clients
+}))(ClientsList);
