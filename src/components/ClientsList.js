@@ -19,7 +19,7 @@ class ClientsList extends Component {
     render() {
         return (
             <Container>
-                <List divided relaxed selection >
+                <List divided relaxed selection inverted>
                     {this.getBody(this.props.clients)}
                 </List>
             </Container>

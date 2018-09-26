@@ -2,21 +2,25 @@ import React, { Component } from 'react';
 import ClientsList from '../ClientsList';
 import Details from '../Details';
 // import './index.css';
-import {Container, Segment} from 'semantic-ui-react';
+import {Container, Grid, Segment} from 'semantic-ui-react';
 
 class App extends Component {
 
     render() {
         return (
             <Container>
-                <Segment.Group horizontal>
-                    <Segment>
-                        <ClientsList/>
-                    </Segment>
-                    <Segment>
-                        <Details/>
-                    </Segment>
-                </Segment.Group>
+                <Grid columns={2}>
+                    <Grid.Column width={4}>
+                        <Segment inverted>
+                            <ClientsList/>
+                        </Segment>
+                    </Grid.Column>
+                    <Grid.Column width={12}>
+                        <Segment secondary color='black' basic>
+                            <Details/>
+                        </Segment>
+                    </Grid.Column>
+                </Grid>
             </Container>
         );
     }
