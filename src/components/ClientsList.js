@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 import Client from './Client';
 import {connect} from 'react-redux';
+import {Container, List} from 'semantic-ui-react';
 
 class ClientsList extends Component {
 
     getBody = (data) => (
         data.map((client) => {
             return (
-                <li key={client.id}>
+                <List.Item key={client.id}>
                     <Client client={client}/>
-                </li>
+                </List.Item>
             )
         })
     );
@@ -17,7 +18,11 @@ class ClientsList extends Component {
 
     render() {
         return (
-            <ul>{this.getBody(this.props.clients)}</ul>
+            <Container>
+                <List divided relaxed selection >
+                    {this.getBody(this.props.clients)}
+                </List>
+            </Container>
         )
     }
 }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {changeActiveClient} from '../AC';
 import {connect} from 'react-redux';
+import {Image} from 'semantic-ui-react';
 
 class Client extends Component {
 
@@ -14,8 +15,8 @@ class Client extends Component {
         const {client} = this.props;
         return (
             <div className='client' onClick={this.setActiveClient}>
-                <img src={client.general.avatar} alt={client.general.lastName} className='client_img__small'/>
-                {`${client.general.firstName} ${client.general.lastName}`}
+                <Image src={client.general.avatar} alt={client.general.lastName} avatar />
+                <span>{`${client.general.firstName} ${client.general.lastName}`}</span>
             </div>
         );
     }
