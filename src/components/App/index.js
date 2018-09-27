@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ClientsList from '../ClientsList';
 import Details from '../Details';
-// import './index.css';
 import {Container, Grid, Segment} from 'semantic-ui-react';
 
 class App extends Component {

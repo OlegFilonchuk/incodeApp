@@ -1,4 +1,4 @@
-import {CHANGE_ACTIVE_CLIENT} from '../constants';
+import {CHANGE_ACTIVE_CLIENT, CHANGE_CLIENTS_LIST} from '../constants';
 
 export function changeActiveClient(client) {
     return {
@@ -7,4 +7,13 @@ export function changeActiveClient(client) {
             ...client
         }
     }
+}
+
+export function changeClientsList(clients) {
+  return {
+    type: CHANGE_CLIENTS_LIST,
+    payload: {
+      clients: [...clients]
+    }
+  }
 }

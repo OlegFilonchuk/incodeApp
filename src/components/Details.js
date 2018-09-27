@@ -21,7 +21,7 @@ class Details extends Component {
         );
 
         return (
-            <Container text>
+            <Container>
                 <Grid columns={2}>
                     <Grid.Column width={4}>
                         <Image src={client.general.avatar} alt={client.general.lastName}/>
@@ -69,6 +69,6 @@ class Details extends Component {
     }
 }
 
-export default connect(({activeClient}) => ({
+export default connect(({ activeClient }) => ({
     activeClient
 }))(Details);
