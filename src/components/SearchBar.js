@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {changeClientsList} from '../AC/';
+import {Input} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 
 
@@ -32,7 +33,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div>
-        <input type="text" onChange={this.onChange} value={this.state.value}/>
+        <Input icon='search' placeholder='Search...' onChange={this.onChange} value={this.state.value} fluid/>
       </div>
     );
   }
