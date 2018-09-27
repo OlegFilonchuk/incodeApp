@@ -8,7 +8,7 @@ class Client extends Component {
     setActiveClient = (ev) => {
         ev.preventDefault();
         const {client, changeActiveClient} = this.props;
-        changeActiveClient(client);
+        changeActiveClient({...client});
     };
 
     render() {

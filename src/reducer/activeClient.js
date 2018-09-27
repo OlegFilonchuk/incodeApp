@@ -8,6 +8,6 @@ export default (activeClient = {}, action) => {
         case CHANGE_ACTIVE_CLIENT:
             return {...payload};
         default:
-            return {...payload};
+            return activeClient;
     }
 };

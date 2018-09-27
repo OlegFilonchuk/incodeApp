@@ -1,6 +1,7 @@
+import {data} from './clients';
 import uuid from 'js-uuid';
 
-export const generateIds = (array) => {
+const generateIds = (array) => {
     return array.map((item) => {
         return {
             ...item,
@@ -8,3 +9,5 @@ export const generateIds = (array) => {
         }
     })
 };
+
+export const dataWithIds = generateIds(data);

@@ -6,7 +6,7 @@ import {Container, List} from 'semantic-ui-react';
 
 class ClientsList extends Component {
 
-  getBody = (data) => (
+  getBody = data => (
     data.map((client) => {
       return (
         <List.Item key={client.id}>
@@ -16,13 +16,12 @@ class ClientsList extends Component {
     })
   );
 
-
   render() {
     return (
       <Container>
         <SearchBar/>
         <List divided relaxed selection inverted>
-          {this.getBody(this.props.clients)}
+          {this.getBody(this.props.candidates)}
         </List>
       </Container>
     )
@@ -30,6 +29,6 @@ class ClientsList extends Component {
 
 }
 
-export default connect(({ clients }) => ({
-  clients
+export default connect(({ candidates }) => ({
+  candidates
 }))(ClientsList);

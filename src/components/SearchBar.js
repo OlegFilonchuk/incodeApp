@@ -9,7 +9,7 @@ class SearchBar extends Component {
     value: ''
   };
 
-  onChange = (ev) => {
+  onChange = ev => {
     const { clients } = this.props;
 
     const candidates = clients.filter(client => {
